@@ -8,7 +8,13 @@ SELECT
     AVG(ice_thickness) AS AvgIceThickness,
     MIN(ice_thickness) AS MinIceThickness,
     MAX(ice_thickness) AS MaxIceThickness,
-    System.Timestamp AS EventTime
+    System.Timestamp AS EventTime,
+    CASE 
+        WHEN AVG(ice_thickness) >= 30 AND AVG(surface_temperature) <= -2 THEN 'Safe'
+        WHEN AVG(ice_thickness) >= 25 AND AVG(surface_temperature) <= 0 THEN 'Caution'
+        ELSE 'Unsafe'
+    END AS CurrentStatus
+
 INTO
     [output]
 FROM

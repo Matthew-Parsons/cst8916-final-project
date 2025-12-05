@@ -3,7 +3,7 @@ SELECT
     AVG(surface_temperature) AS AvgSurfaceTemp,
     MIN(surface_temperature) AS MinSurfaceTemp,
     MAX(surface_temperature) AS MaxSurfaceTemp,
-    AVG(extTemperature) AS AvgExternalTemp,
+    AVG(ext_temperature) AS AvgExternalTemp,
     MAX(snow_accumulation) AS MaxSnowAccumulation,
     AVG(ice_thickness) AS AvgIceThickness,
     MIN(ice_thickness) AS MinIceThickness,

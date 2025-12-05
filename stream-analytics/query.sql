@@ -10,8 +10,8 @@ SELECT
     MAX(ice-thickness) AS MaxIceThickness,
     System.Timestamp AS EventTime
 INTO
-    [output]
+    [canal-output]
 FROM
-    [input]
+    [canal-input]
 GROUP BY
     IoTHub.ConnectionDeviceId, TumblingWindow(second, 300)

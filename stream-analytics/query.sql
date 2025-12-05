@@ -1,13 +1,13 @@
 SELECT
     IoTHub.ConnectionDeviceId AS DeviceId,
-    AVG(surface-temperature) AS AvgSurfaceTemp,
-    MIN(surface-temperature) AS MinSurfaceTemp,
-    MAX(surface-temperature) AS MaxSurfaceTemp,
-    AVG(externalTemperature) AS AvgExternalTemp,
-    MAX(snow-accumulation) AS MaxSnowAccumulation,
-    AVG(ice-thickness) AS AvgIceThickness,
-    MIN(ice-thickness) AS MinIceThickness,
-    MAX(ice-thickness) AS MaxIceThickness,
+    AVG(surface_temperature) AS AvgSurfaceTemp,
+    MIN(surface_temperature) AS MinSurfaceTemp,
+    MAX(surface_temperature) AS MaxSurfaceTemp,
+    AVG(extTemperature) AS AvgExternalTemp,
+    MAX(snow_accumulation) AS MaxSnowAccumulation,
+    AVG(ice_thickness) AS AvgIceThickness,
+    MIN(ice_thickness) AS MinIceThickness,
+    MAX(ice_thickness) AS MaxIceThickness,
     System.Timestamp AS EventTime
 INTO
     [canal-output]

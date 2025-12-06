@@ -1,6 +1,6 @@
 -- Storage Account SQL
 SELECT
-    IoTHub.ConnectionDeviceId AS DeviceId,
+    IoTHub.ConnectionDeviceId + ' ' + CAST(DATEDIFF(ms, '1970-01-01T00:00:00Z', System.Timestamp) AS nvarchar(max)) AS DeviceId,
     AVG(surface_temperature) AS AvgSurfaceTemp,
     MIN(surface_temperature) AS MinSurfaceTemp,
     MAX(surface_temperature) AS MaxSurfaceTemp,
@@ -27,7 +27,7 @@ GROUP BY
 -- CosmosDB SQL
 SELECT
     location,
-    location + '-' + CAST(DATEDIFF(ms, '1970-01-01T00:00:00Z', System.Timestamp) AS nvarchar(max)) AS id,
+    location + ' ' + CAST(DATEDIFF(ms, '1970-01-01T00:00:00Z', System.Timestamp) AS nvarchar(max)) AS id,
     AVG(surface_temperature) AS AvgSurfaceTemp,
     MIN(surface_temperature) AS MinSurfaceTemp,
     MAX(surface_temperature) AS MaxSurfaceTemp,

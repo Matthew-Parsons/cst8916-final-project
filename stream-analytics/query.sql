@@ -27,6 +27,7 @@ GROUP BY
 -- CosmosDB SQL
 SELECT
     IoTHub.ConnectionDeviceId AS id,
+    input.location,
     AVG(surface_temperature) AS AvgSurfaceTemp,
     MIN(surface_temperature) AS MinSurfaceTemp,
     MAX(surface_temperature) AS MaxSurfaceTemp,
@@ -48,4 +49,4 @@ INTO
 FROM
     [input]
 GROUP BY
-    IoTHub.ConnectionDeviceId, TumblingWindow(second, 300)
+        IoTHub.ConnectionDeviceId, input.location, TumblingWindow(second, 300)

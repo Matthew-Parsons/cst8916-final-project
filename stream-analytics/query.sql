@@ -1,6 +1,6 @@
 -- Storage Account SQL
 SELECT
-    IoTHub.ConnectionDeviceId + ' ' + CAST(DATEDIFF(ms, '1970-01-01T00:00:00Z', System.Timestamp) AS nvarchar(max)) AS DeviceId,
+    IoTHub.ConnectionDeviceId AS DeviceId,
     AVG(surface_temperature) AS AvgSurfaceTemp,
     MIN(surface_temperature) AS MinSurfaceTemp,
     MAX(surface_temperature) AS MaxSurfaceTemp,

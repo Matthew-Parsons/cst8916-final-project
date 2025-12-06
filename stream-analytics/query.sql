@@ -26,7 +26,7 @@ GROUP BY
 
 -- CosmosDB SQL
 SELECT
-    IoTHub.ConnectionDeviceId AS DeviceId,
+    IoTHub.ConnectionDeviceId AS id,
     AVG(surface_temperature) AS AvgSurfaceTemp,
     MIN(surface_temperature) AS MinSurfaceTemp,
     MAX(surface_temperature) AS MaxSurfaceTemp,

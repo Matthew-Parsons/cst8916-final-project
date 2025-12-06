@@ -26,7 +26,6 @@ GROUP BY
 
 -- CosmosDB SQL
 SELECT
-    IoTHub.ConnectionDeviceId AS id,
     input.location,
     AVG(surface_temperature) AS AvgSurfaceTemp,
     MIN(surface_temperature) AS MinSurfaceTemp,
@@ -42,11 +41,11 @@ SELECT
         WHEN AVG(ice_thickness) >= 25 AND AVG(surface_temperature) <= 0 THEN 'Caution'
         ELSE 'Unsafe'
     END AS CurrentStatus,
-    System.Timestamp AS EventTime
+    System.Timestamp AS windowEndTime
 
 INTO
     [web-output]
 FROM
     [input]
 GROUP BY
-        IoTHub.ConnectionDeviceId, input.location, TumblingWindow(second, 300)
+        input.location, TumblingWindow(second, 300)

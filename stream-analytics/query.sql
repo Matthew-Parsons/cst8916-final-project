@@ -22,7 +22,7 @@ INTO
 FROM
     [input]
 GROUP BY
-    IoTHub.ConnectionDeviceId, TumblingWindow(second, 60)
+    IoTHub.ConnectionDeviceId, TumblingWindow(second, 300)
 
 -- CosmosDB SQL
 SELECT
@@ -49,4 +49,4 @@ INTO
 FROM
     [input]
 GROUP BY
-        location, TumblingWindow(second, 60)
+        location, TumblingWindow(second, 300)

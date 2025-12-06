@@ -22,11 +22,12 @@ INTO
 FROM
     [input]
 GROUP BY
-    IoTHub.ConnectionDeviceId, TumblingWindow(second, 300)
+    IoTHub.ConnectionDeviceId, TumblingWindow(second, 60)
 
 -- CosmosDB SQL
 SELECT
-    input.location,
+    location,
+    location + '-' + CAST(DATEDIFF(ms, '1970-01-01T00:00:00Z', System.Timestamp) AS nvarchar(max)) AS id,
     AVG(surface_temperature) AS AvgSurfaceTemp,
     MIN(surface_temperature) AS MinSurfaceTemp,
     MAX(surface_temperature) AS MaxSurfaceTemp,
@@ -48,4 +49,4 @@ INTO
 FROM
     [input]
 GROUP BY
-        input.location, TumblingWindow(second, 300)
+        location, TumblingWindow(second, 60)

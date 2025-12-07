@@ -20,7 +20,6 @@ System Objectives:
 4. Archive historical data in Azure Blob Storage
 5. Display live data through a web dashboard hosted on Azure App Service
 
-
 ## System Architecture
 Diagram is in architecture folder.
 
@@ -57,11 +56,13 @@ Simulates the three sensors on the rideau canal, and sends that information to t
 
 
 ## Repo Links
-
+web dashboard repo: https://github.com/Matthew-Parsons/rideau-canal-dashboard
+sensor simulation repo: https://github.com/Matthew-Parsons/rideau-canal-sensor-simulation
+live dashboard link (will not work as resources have been deleted): https://rideaucanalstats-ccg9csbmcce4f6f9.canadacentral-01.azurewebsites.net/
 
 
 ## Video Demo
-
+Video link: https://youtu.be/KGz1xMLi43I
 
 ## Setup Instructions
 Prerequisites

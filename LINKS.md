@@ -20,5 +20,4 @@
 - **Description:** Web dashboard application
 
 ## Demo
-
-- **Video Demo:** [YouTube]
+- **Video Demo:** https://youtu.be/KGz1xMLi43I
